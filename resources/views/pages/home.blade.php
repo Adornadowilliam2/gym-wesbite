@@ -23,9 +23,8 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 10px 0;
+            padding: 20px;
             z-index: 1000;
-            background-image: url("../../public/assests/landingpage.jpg");
         }
 
         .navbar ul {
@@ -75,11 +74,17 @@
             padding: 50px 20px;
             background-color: white;
             text-align: center;
+            background-image: url("https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/landingpage.jpg?raw=true");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
         }
 
         .services h2 {
             margin-bottom: 30px;
             font-size: 2rem;
+            color: #333;
         }
 
         .service-item {
@@ -91,13 +96,18 @@
 
         .service-item img {
             max-width: 200px;
-            margin: 0 20px;
+            width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .service-content {
             max-width: 300px;
+            width: 100%;
+            text-align: left;
+            background-color: #f4f4f4;
+            margin: 0 10px;
+            padding: 20px;
         }
 
         .service-content h3 {
@@ -143,18 +153,77 @@
             }
         }
 
+.navbar {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust this value as needed */
+}
+
+.navbar-title {
+    color: white;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.navbar-logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 0 10px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #4caf50; /* Change hover color as needed */
+}
+
+
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" >
+    <span style="color: white; font-size: 24px; margin-right: 20px; display: flex; align-items: center; position: absolute; left: 20px;">
+        <img src="assets/logo.png" alt="logo" class="navbar-logo">
+   Gym Website</span>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
             @if (Auth::check())
-                <li><a href="{{ route('logout') }}"">Logout</a></li>
+                <li><a href="{{ route('logout') }}">Logout</a></li>
             @else
                 <li><a href="{{ route('login') }}">Login</a></li>
             @endif
@@ -170,27 +239,24 @@
         </section>
 
         <!-- Services Section -->
-     
         <section class="services" id="services">
-            <h2>Our Services</h2>
+            <h2 style="color: white">Our Services</h2>
             <div class="service-item">
                 <img src="https://via.placeholder.com/200x200" alt="Service 1">
-       
-            <div class="service-content">
-                <h3>50% Off Membership</h3>
-                <p>Take advantage of our limited-time offer! Sign up for a gym membership and get 50% off your monthly fee for the first three months. Experience top-notch fitness equipment, professional trainers, and a variety of fitness classes that suit your goals.</p>
-                <p>Don't miss out—this offer is available only for a limited time!</p>
+                <div class="service-content">
+                    <h3>50% Off Membership</h3>
+                    <p>Take advantage of our limited-time offer! Sign up for a gym membership and get 50% off your monthly fee for the first three months. Experience top-notch fitness equipment, professional trainers, and a variety of fitness classes that suit your goals.</p>
+                    <p>Don't miss out—this offer is available only for a limited time!</p>
+                </div>
             </div>
-
+            <div class="service-item">
+                <img src="https://via.placeholder.com/200x200" alt="Free Energy Drink Offer">
+                <div class="service-content">
+                    <h3>Free Energy Drink Every Weekend</h3>
+                    <p>Starting from December 25 to December 30, enjoy a free energy drink every weekend when you visit our gym! Stay hydrated and energized as you work out and make the most of your fitness routine.</p>
+                    <p>Join us and experience the extra boost during your workouts with this limited-time offer!</p>
+                </div>
             </div>
-         <div class="service-item">
-            <img src="https://via.placeholder.com/200x200" alt="Free Energy Drink Offer">
-            <div class="service-content">
-                <h3>Free Energy Drink Every Weekend</h3>
-                <p>Starting from December 25 to December 30, enjoy a free energy drink every weekend when you visit our gym! Stay hydrated and energized as you work out and make the most of your fitness routine.</p>
-                <p>Join us and experience the extra boost during your workouts with this limited-time offer!</p>
-            </div>
-        </div>
             <div class="service-item">
                 <img src="https://via.placeholder.com/200x200" alt="Service 3">
                 <div class="service-content">
