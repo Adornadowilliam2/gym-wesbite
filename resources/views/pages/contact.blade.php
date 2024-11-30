@@ -201,6 +201,21 @@
                 opacity: 1;
                 display:block;
             }
+
+            .navbar ul li:last-child{
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 767px){
+            .contact-container{
+                flex-direction: column-reverse;
+            }
+
+            .business-card{
+                background: transparent;
+                width:200px;
+            }
         }
     </style>
 </head>

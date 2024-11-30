@@ -218,6 +218,10 @@
                 opacity: 1;
                 display:block;
             }
+            
+           .navbar ul li:last-child{
+                margin-bottom: 10px;
+            }
         }
 
       

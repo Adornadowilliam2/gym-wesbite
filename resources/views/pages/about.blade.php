@@ -18,7 +18,7 @@
 
         .navbar {
             background-color: #333;
-            padding: 10px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -99,7 +99,7 @@
             color: #4caf50;
         }
 
-          .hamburger-menu{
+        .hamburger-menu{
             opacity: 0;
             display:none;
         }
@@ -124,6 +124,10 @@
             .hamburger-menu{
                 opacity: 1;
                 display:block;
+            }
+
+            .navbar ul li:last-child{
+                margin-bottom: 10px;
             }
         }
        
