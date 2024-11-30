@@ -20,7 +20,13 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Run database migrations (optional, be cautious)
-RUN php artisan migrate --force
+RUN php artisan migrate --force --no-interaction
+
+# Generate Passport encryption keys (no interaction)
+RUN php artisan passport:keys --no-interaction
+
+# Create a personal access client (no interaction)
+RUN php artisan passport:client --personal --no-interaction
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www
@@ -28,4 +34,5 @@ RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+# Run the Laravel server
+CMD ["php", "artisan", "serve", "--host=127.0.0.1", "--port=8080"]
