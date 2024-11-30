@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Register Gym Website</title>
+            <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -117,6 +118,9 @@
             .login-link:hover {
                 text-decoration: underline;
             }
+            span{
+                font-size: 12px;
+            }
         </style>
     </head>
     <body>
@@ -126,7 +130,10 @@
                 style="display: flex; flex-direction: column"
                 action="{{ route('register') }}"
                 method="POST"
-            >
+            >   
+                <a href="/" style="position:absolute; right:10px;">
+                    <img src="assets/close.png" alt="Close" style="width:20px; box-shadow: none"/>
+                </a>
                 @csrf
                 <img src="assets/logo.png" alt="logo">
                 <h1>Register</h1>

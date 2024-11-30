@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <style>
         /* Basic resets */
         body, h1, h2, h3, p, ul, li, img {
@@ -17,14 +18,31 @@
             background-color: #f4f4f4;
         }
 
-        /* Navigation Bar */
+        /* Navbar styling */
         .navbar {
             background-color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
             position: fixed;
             top: 0;
-            width: 100%;
-            padding: 20px;
             z-index: 1000;
+        }
+
+        .navbar-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .navbar span {
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
         }
 
         .navbar ul {
@@ -75,7 +93,7 @@
             background-color: white;
             text-align: center;
             background-image: url("https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/landingpage.png?raw=true");
-            background-size: 100% 100%;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
@@ -85,6 +103,12 @@
             margin-bottom: 30px;
             font-size: 2rem;
             color: #333;
+            background-color: #333;
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-top: 50px;
         }
 
         .service-item {
@@ -99,6 +123,7 @@
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
         }
 
         .service-content {
@@ -106,8 +131,9 @@
             width: 100%;
             text-align: left;
             background-color: #f4f4f4;
-            margin: 0 10px;
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .service-content h3 {
@@ -117,6 +143,7 @@
 
         .service-content p {
             font-size: 1rem;
+            margin-bottom: 10px;
         }
 
         /* Map section */
@@ -153,81 +180,77 @@
             }
         }
 
-.navbar {
-    background-color: #333;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
+        html{
+            scroll-behavior: smooth;
+        }
 
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Adjust this value as needed */
-}
+        form button{
+            color: white;
+        }
 
-.navbar-title {
-    color: white;
-    font-size: 24px;
-    margin-right: 20px;
-}
+        form button:hover{
+            color: #4caf50;
+        }
 
-.navbar-logo {
-    width: 50px; /* Adjust size as needed */
-    height: auto;
-    margin-right: 20px;
-}
+          .hamburger-menu{
+            opacity: 0;
+            display:none;
+        }
 
-.navbar-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        @media (max-width: 900px) {
+            .navbar ul{
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #333;
+                display: block;
 
-.navbar-links li {
-    margin: 0 10px;
-}
+                padding: 0;
+                opacity: 0;
+            }
 
-.navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
+            .navbar ul li{
+                border  : 1px solid white;
+                padding:10px;
+            }
 
-.navbar-links a:hover {
-    color: #4caf50; /* Change hover color as needed */
-}
+            .hamburger-menu{
+                opacity: 1;
+                display:block;
+            }
+        }
 
-
+      
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar" >
-    <span style="color: white; font-size: 24px; margin-right: 20px; display: flex; align-items: center; position: absolute; left: 20px;">
-        <img src="assets/logo.png" alt="logo" class="navbar-logo">
-   Gym Website</span>
+
+   
+    <nav class="navbar">
+        <span>
+            <img src="assets/logo.png" alt="logo" class="navbar-logo">
+            Gym Website
+        </span>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About Us</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact">Contact</a></li>
             @if (Auth::check())
-                <li><a href="{{ route('logout') }}">Logout</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                        <button type="submit" style="background: none;font-size:18px; border: none;  cursor: pointer;">Logout</button>
+                    </form>
+                </li>
             @else
-                <li><a href="{{ route('login') }}">Login</a></li>
+               <li><a href="{{ route('login') }}">Login</a></li>
             @endif
         </ul>
+         <div class="hamburger-menu">
+            <img src="assets/hamburger.png" alt="menu" width="50px" style="cursor: pointer; ">
+        </div>
     </nav>
 
     <!-- Main Content -->
@@ -240,7 +263,7 @@
 
         <!-- Services Section -->
         <section class="services" id="services">
-            <h2 style="color: white; background-color: #333; ">Our Services</h2>
+            <h2>Our Services</h2>
             <div class="service-item">
                 <img src="https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/50%25%20off%20gym%20membership%20poster.png?raw=true" alt="Service 1">
                 <div class="service-content">
@@ -257,14 +280,13 @@
                     <p>Join us and experience the extra boost during your workouts with this limited-time offer!</p>
                 </div>
             </div>
-           <div class="service-item">
-                <img src="https://via.placeholder.com/200x200" alt="Trainer Offer" class="service-image">
+            <div class="service-item">
+                <img src="https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/male%20version%20of%2030%25%20Off%20One-Time%20Trainer%20Offer%20with%20the%20theme%20of%20workout.png?raw=true" alt="Trainer Offer">
                 <div class="service-content">
                     <h3>30% Off One-Time Trainer Offer</h3>
                     <p>Take advantage of this limited-time offer and enjoy 30% off a one-time training session with our expert trainers. Boost your fitness journey with personalized guidance!</p>
                 </div>
             </div>
-
         </section>
 
         <!-- Map Section -->
@@ -282,3 +304,13 @@
     </footer>
 </body>
 </html>
+<script>
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('.navbar ul');   
+
+    hamburgerMenu.addEventListener('click', () => {
+        const newOpacity = nav.style.opacity == '0' ? '1' : '0';
+        nav.style.opacity = newOpacity;
+    })
+</script>
+

@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Login Gym Website</title>
+            <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -121,29 +122,33 @@
             p {
                 font-size: 12px;
             }
+
+            span{
+                font-size:12px;
+            }
         </style>
     </head>
     <body>
         <main>
+      
+
             <form
                 id="login-form"
                 action="{{ route('login') }}"
                 method="POST"
+                style="position:relative"
             >
+                <a href="/" style="position:absolute; right:10px;">
+                    <img src="assets/close.png" alt="Close" style="width:20px; box-shadow: none"/>
+                </a>
                 @csrf
                 <img src="assets/logo.png" alt="logo">
                 <h1>Login</h1>
                 <div>
-                    <label for="username">Username:</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="Enter your username"
-                        required
-                    />
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
                 </div>
-                <span>{{ $errors->first('username') }}</span>
+                <span>{{ $errors->first('email') }}</span>
                 <div>
                     <label for="password">Password:</label>
                     <input
