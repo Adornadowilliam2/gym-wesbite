@@ -240,7 +240,7 @@
 
         <!-- Services Section -->
         <section class="services" id="services">
-            <h2 style="color: white">Our Services</h2>
+            <h2 style="color: white; background-color: #333; ">Our Services</h2>
             <div class="service-item">
                 <img src="https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/50%25%20off%20gym%20membership%20poster.png?raw=true" alt="Service 1">
                 <div class="service-content">
@@ -250,20 +250,21 @@
                 </div>
             </div>
             <div class="service-item">
-                <img src="https://via.placeholder.com/200x200" alt="Free Energy Drink Offer">
+                <img src="https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/Free%20Energy%20Drink%20Every%20Weekend%20with%20a%20workout%20theme.png?raw=true" alt="Free Energy Drink Offer">
                 <div class="service-content">
                     <h3>Free Energy Drink Every Weekend</h3>
                     <p>Starting from December 25 to December 30, enjoy a free energy drink every weekend when you visit our gym! Stay hydrated and energized as you work out and make the most of your fitness routine.</p>
                     <p>Join us and experience the extra boost during your workouts with this limited-time offer!</p>
                 </div>
             </div>
-            <div class="service-item">
-                <img src="https://via.placeholder.com/200x200" alt="Service 3">
+           <div class="service-item">
+                <img src="https://via.placeholder.com/200x200" alt="Trainer Offer" class="service-image">
                 <div class="service-content">
-                    <h3>Service 3</h3>
-                    <p>Affordable and reliable service with a personal touch.</p>
+                    <h3>30% Off One-Time Trainer Offer</h3>
+                    <p>Take advantage of this limited-time offer and enjoy 30% off a one-time training session with our expert trainers. Boost your fitness journey with personalized guidance!</p>
                 </div>
             </div>
+
         </section>
 
         <!-- Map Section -->
