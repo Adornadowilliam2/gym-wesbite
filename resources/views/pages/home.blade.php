@@ -242,7 +242,7 @@
         <section class="services" id="services">
             <h2 style="color: white">Our Services</h2>
             <div class="service-item">
-                <img src="https://via.placeholder.com/200x200" alt="Service 1">
+                <img src="https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/50%25%20off%20gym%20membership%20poster.png?raw=true" alt="Service 1">
                 <div class="service-content">
                     <h3>50% Off Membership</h3>
                     <p>Take advantage of our limited-time offer! Sign up for a gym membership and get 50% off your monthly fee for the first three months. Experience top-notch fitness equipment, professional trainers, and a variety of fitness classes that suit your goals.</p>
