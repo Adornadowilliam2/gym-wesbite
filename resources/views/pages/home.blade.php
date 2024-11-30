@@ -74,7 +74,7 @@
             padding: 50px 20px;
             background-color: white;
             text-align: center;
-            background-image: url("https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/landingpage.jpg?raw=true");
+            background-image: url("https://github.com/Adornadowilliam2/gym-wesbite/blob/main/public/assets/landingpage.png?raw=true");
             background-size: 100% 100%;
             background-position: center;
             background-repeat: no-repeat;
