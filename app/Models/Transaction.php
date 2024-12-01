@@ -9,7 +9,6 @@ class Transaction extends Model
     //
     protected $table = "transactions";
     protected $fillable = [
-        "user_id",
         "name",
         "email",
         "message"

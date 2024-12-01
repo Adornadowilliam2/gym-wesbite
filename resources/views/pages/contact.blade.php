@@ -217,6 +217,11 @@
                 width:200px;
             }
         }
+
+        .success-message{
+            font-size:12px;
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -258,15 +263,22 @@
         <div class="contact-container">
             <form class="contact-form" action="{{ route('transaction') }}" method="post">
                 @csrf
-                <span class"error">{{$errors->first('user_id')}}</span>
+                @if(session('success'))
+                    <div class="success-message">{{ session('success') }}</div>
+                @endif
+
                 <input type="text" name="name" placeholder="Your Name" required>
-                <span class"error">{{$errors->first('name')}}</span>
+                <span class="error">{{ $errors->first('name') }}</span>
+                
                 <input type="email" name="email" placeholder="Your Email" required>
-                <span class"error">{{$errors->first('email')}}</span>
+                <span class="error">{{ $errors->first('email') }}</span>
+                
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <span class"error">{{$errors->first('message')}}</span>
+                <span class="error">{{ $errors->first('message') }}</span>
+                
                 <button type="submit">Send Message</button>
             </form>
+
           <!-- Business Card -->
         <div class="business-card">
             <h2>Contact Information</h2>

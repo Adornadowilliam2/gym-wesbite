@@ -15,6 +15,6 @@ Route::post("/login",[WebController::class,'loginPost']);
 
 Route::get("/about", [WebController::class, 'about'])->name('about');
 Route::get("/contact", [WebController::class, 'contact'])->name('contact');
-Route::post("/transaction", [WebController::class, 'transaction'])->name('transaction');
+Route::middleware("auth:web")->post("/transaction", [WebController::class, 'transaction'])->name('transaction');
 
 Route::post("/logout", [WebController::class, 'logout'])->name('logout');

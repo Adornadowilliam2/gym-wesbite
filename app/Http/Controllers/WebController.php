@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Transaction;
 class WebController extends Controller
 {
     //
@@ -82,19 +83,19 @@ class WebController extends Controller
         return view('pages.contact');
     }
 
-    public function transaction(Request $request){
+    public function transaction(Request $request) {
         $validator = validator($request->all(), [
-            "user_id" => "required|exist:users,id",
             "name" => "required|string|min:4|max:15",
             "email" => "required|string|min:4|email",
             "message" => "required|string|min:4|max:100"
         ]);
 
-         if( $validator->fails() ){
+        if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $transaction = Transaction::create($validator->validated());
-        return back()->with('Successfully sent the message!');
+        return back()->with('success', 'Successfully sent the message!');
     }
+
 }
