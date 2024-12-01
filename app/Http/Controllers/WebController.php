@@ -35,14 +35,7 @@ class WebController extends Controller
         return redirect('/')->with('user', $user);
     }
 
-    
-    public function checkToken(Request $request){
-        return response()->json([
-            "ok" =>  true,
-            "message" => "Token is valid",
-            "data" => $request->user()
-        ], 200);
-    }
+
 
     public function logout(Request $request){
         Auth::logout(); 
@@ -95,7 +88,7 @@ class WebController extends Controller
         }
 
         $transaction = Transaction::create($validator->validated());
-        return back()->with('success', 'Successfully sent the message!');
+        return redirect("/contact")->with('success', 'Successfully sent the message!');
     }
 
 }
